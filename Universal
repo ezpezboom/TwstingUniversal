@@ -40,3 +40,67 @@ hi:Play()
 end
 end)
 end)
+
+
+spawn(function()
+game:GetService'Players'.LocalPlayer.CharacterAdded:Connect(function(Character)
+wait(3)
+ function Aura(id, color, emis, inf, par)
+    Evil = Instance.new'ParticleEmitter'
+    Evil.Parent = par
+    Evil.Texture = id
+    Evil.Drag = 0
+    Evil.LockedToPart = true
+    Evil.Rate = 50
+    Evil.Lifetime = NumberRange.new(.5, .5)
+    Evil.LightEmission = emis
+    Evil.LightInfluence = inf
+    Evil.Speed = NumberRange.new(0, 1)
+    Evil.Color = ColorSequence.new(color)
+    numberKeypoints2 = {
+        NumberSequenceKeypoint.new(0, 1),
+        NumberSequenceKeypoint.new(1, 0)
+    }
+    Evil.Rotation = NumberRange.new(60, 60)
+    Evil.Size = NumberSequence.new(numberKeypoints2)
+end
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA'BasePart' and v.Name ~= 'HumanoidRootPart' then
+        Aura('rbxassetid://8098509063', Color3.fromRGB(240,248,255), 1, 0, v)
+        Aura('rbxassetid://8098512076', Color3.fromRGB(70,130,180), 1, 0, v)
+        Aura('rbxassetid://8098503421', Color3.fromRGB(0,0,255), 0, 1, v)
+    end
+end
+
+ function Aura(id, color, emis, inf, par)
+    Evil = Instance.new'ParticleEmitter'
+    Evil.Parent = par
+    Evil.Texture = id
+    Evil.Drag = 0
+    Evil.LockedToPart = true
+    Evil.Rate = 50
+    Evil.Lifetime = NumberRange.new(.5, .5)
+    Evil.LightEmission = emis
+    Evil.LightInfluence = inf
+    Evil.Speed = NumberRange.new(0, 1)
+    Evil.Color = ColorSequence.new(color)
+    numberKeypoints2 = {
+        NumberSequenceKeypoint.new(0, 1),
+        NumberSequenceKeypoint.new(1, 0)
+    }
+    Evil.Rotation = NumberRange.new(60, 60)
+    Evil.Size = NumberSequence.new(numberKeypoints2)
+end
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA'BasePart' and v.Name ~= 'HumanoidRootPart' then
+        Aura('rbxassetid://8098509063', Color3.fromRGB(240,248,255), 1, 0, v)
+        Aura('rbxassetid://8098512076', Color3.fromRGB(72,61,139), 1, 0, v)
+        Aura('rbxassetid://8098503421', Color3.fromRGB(0,0,255), 0, 1, v)
+    end
+end
+end)
+end)
+end
+end)
